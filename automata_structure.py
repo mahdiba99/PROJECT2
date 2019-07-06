@@ -1,3 +1,4 @@
+from toCFG import *
 import copy
 
 
@@ -54,4 +55,12 @@ for line in lines:
 npda = NPDA(states, input_symbols, stack_symbols,
             transitions, initial_states,
             stack_initial_symbols, final_states)
-print(npda.transitions)
+
+def main():
+    print('convert to CFG')
+    print(printGrammar(npda))
+    print("for cyk")
+    print(normalizeGrammar(toCFG(npda)))
+    # TODO:run and get input from user & print cyk 
+if __name__=='__main__':
+    main()
